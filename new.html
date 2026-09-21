@@ -1,1 +1,112 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Script</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-page="new">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-mark">S</div>
+        <div>
+          <div style="font-weight:700;color:var(--text-bright);font-size:0.9375rem;letter-spacing:-0.02em">Scripts</div>
+          <div style="font-size:0.6875rem;color:var(--text-muted)">hosting platform</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="/dashboard.html">Dashboard</a>
+        <a class="nav-item active" href="/new.html">New Script</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-secondary" style="width:100%;font-size:0.8125rem;padding:8px">Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div id="form-view">
+        <div class="fade-up" style="margin-bottom:32px">
+          <h1>New Script</h1>
+          <p class="text-secondary" style="margin-top:8px">Paste your Luau source. It gets obfuscated on publish.</p>
+        </div>
+
+        <div id="form-error" style="color:#ff6b6b;font-size:0.875rem;margin-bottom:16px;min-height:1em"></div>
+
+        <div class="glass-card fade-up" style="padding:32px;animation-delay:0.05s">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+            <div>
+              <label class="label" style="display:block;margin-bottom:8px">Script Name</label>
+              <input class="input" id="name" placeholder="Clicker Simulator RNG">
+            </div>
+            <div>
+              <label class="label" style="display:block;margin-bottom:8px">Slug</label>
+              <input class="input" id="slug" placeholder="clicker-simulator-rng" style="font-family:var(--font-mono);font-size:0.875rem">
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px">
+            <label class="label" style="display:block;margin-bottom:8px">Description</label>
+            <input class="input" id="description" placeholder="Automation script for Clicker Simulator RNG.">
+          </div>
+
+          <div style="margin-bottom:20px">
+            <label class="label" style="display:block;margin-bottom:8px">Version</label>
+            <input class="input" id="version" value="1.0.0" style="max-width:200px;font-family:var(--font-mono);font-size:0.875rem">
+          </div>
+
+          <div style="margin-bottom:20px">
+            <label class="label" style="display:block;margin-bottom:8px">Source Code</label>
+            <div class="code-editor">
+              <div class="code-gutter" id="gutter"><div>1</div></div>
+              <textarea id="source" placeholder="-- Paste your Luau code here" spellcheck="false"></textarea>
+            </div>
+          </div>
+
+          <div style="margin-bottom:24px">
+            <label class="label" style="display:block;margin-bottom:8px">Release Notes (optional)</label>
+            <textarea class="textarea" id="notes" rows="3" placeholder="- Fixed auto hatch&#10;- Improved anti-AFK" style="resize:vertical"></textarea>
+          </div>
+
+          <button id="publish-btn" class="btn btn-primary" style="width:100%;padding:14px;font-size:0.9375rem">
+            Publish Script
+          </button>
+        </div>
+      </div>
+
+      <div id="success-view" class="hidden">
+        <div class="glass-card" style="max-width:720px;margin:40px auto;padding:40px;text-align:center">
+          <div style="width:64px;height:64px;border-radius:20px;background:rgba(47,143,251,0.12);border:1px solid rgba(47,143,251,0.3);display:inline-flex;align-items:center;justify-content:center;font-size:28px;color:var(--accent);margin-bottom:20px">✓</div>
+          <h1 style="margin-bottom:8px">Script published</h1>
+          <p class="text-secondary" style="margin-bottom:32px">Your obfuscated script is now live.</p>
+
+          <div style="text-align:left;display:flex;flex-direction:column;gap:20px">
+            <div>
+              <div class="label" style="margin-bottom:8px">Public URL</div>
+              <div class="loadstring-box">
+                <code id="result-url" style="color:var(--accent)"></code>
+                <button id="copy-url" class="btn btn-secondary">Copy</button>
+              </div>
+            </div>
+            <div>
+              <div class="label" style="margin-bottom:8px">Roblox Loadstring</div>
+              <div class="loadstring-box">
+                <code id="result-loadstring"></code>
+                <button id="copy-loadstring" class="btn btn-primary">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:32px">
+            <button id="view-script" class="btn btn-secondary">View Script</button>
+            <a href="/dashboard.html" class="btn btn-secondary">Back to Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

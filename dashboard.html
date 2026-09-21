@@ -1,1 +1,68 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-page="dashboard">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-mark">S</div>
+        <div>
+          <div style="font-weight:700;color:var(--text-bright);font-size:0.9375rem;letter-spacing:-0.02em">Scripts</div>
+          <div style="font-size:0.6875rem;color:var(--text-muted)">hosting platform</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" href="/dashboard.html">Dashboard</a>
+        <a class="nav-item" href="/new.html">New Script</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div style="margin-bottom:8px">Signed in as <span id="user-name" style="color:var(--text-secondary)">…</span></div>
+        <button id="logout-btn" class="btn btn-secondary" style="width:100%;font-size:0.8125rem;padding:8px">Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="fade-up" style="margin-bottom:32px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="text-secondary" style="margin-top:8px">Overview of your script hosting platform.</p>
+        </div>
+        <a href="/new.html" class="btn btn-primary">+ New Script</a>
+      </div>
+
+      <div class="stats-grid fade-up" style="margin-bottom:32px;animation-delay:0.05s">
+        <div class="glass-card stat-card">
+          <div class="label">Total Scripts</div>
+          <div class="stat-value" id="stat-scripts">—</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="label">Total Requests</div>
+          <div class="stat-value" id="stat-requests">—</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="label">Requests Today</div>
+          <div class="stat-value" id="stat-today">—</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="label">Active Scripts</div>
+          <div class="stat-value" id="stat-active">—</div>
+        </div>
+      </div>
+
+      <div class="glass-card fade-up" style="animation-delay:0.1s">
+        <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
+          <h2>Recent Scripts</h2>
+        </div>
+        <div id="scripts-list"></div>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

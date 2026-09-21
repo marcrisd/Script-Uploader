@@ -1,1 +1,80 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-page="script">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-mark">S</div>
+        <div>
+          <div style="font-weight:700;color:var(--text-bright);font-size:0.9375rem;letter-spacing:-0.02em">Scripts</div>
+          <div style="font-size:0.6875rem;color:var(--text-muted)">hosting platform</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="/dashboard.html">Dashboard</a>
+        <a class="nav-item" href="/new.html">New Script</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-secondary" style="width:100%;font-size:0.8125rem;padding:8px">Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="script-body">
+      <div class="fade-up" style="margin-bottom:32px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <h1 id="script-name">—</h1>
+          <span id="script-status" class="pill"></span>
+        </div>
+        <div style="font-family:var(--font-mono);color:var(--text-muted);font-size:0.875rem;margin-bottom:8px">
+          <span id="script-slug"></span>
+        </div>
+        <p id="script-desc" class="text-secondary"></p>
+      </div>
+
+      <div class="glass-card fade-up" style="padding:24px;margin-bottom:20px;animation-delay:0.05s">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+          <div>
+            <div class="label">Current Version</div>
+            <div style="font-family:var(--font-mono);font-weight:500;color:var(--text-bright);margin-top:4px" id="script-version">—</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="toggle-btn" class="btn btn-secondary">Toggle</button>
+            <button id="delete-btn" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom:16px">
+          <div class="label" style="margin-bottom:8px">Public URL</div>
+          <div class="loadstring-box">
+            <code id="script-url" style="color:var(--accent)"></code>
+            <button id="copy-url" class="btn btn-secondary">Copy</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="label" style="margin-bottom:8px">Loadstring</div>
+          <div class="loadstring-box">
+            <code id="script-loadstring"></code>
+            <button id="copy-loadstring" class="btn btn-primary">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card fade-up" style="animation-delay:0.1s">
+        <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
+          <h2>Version History</h2>
+        </div>
+        <div id="versions-list"></div>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,1 +1,35 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in — Scripts</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-page="login">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;z-index:3">
+    <div class="glass-card fade-up" style="width:100%;max-width:400px;padding:40px">
+      <div style="text-align:center;margin-bottom:32px">
+        <div class="sidebar-logo-mark" style="width:48px;height:48px;margin:0 auto 16px;font-size:1.125rem">S</div>
+        <h1 style="font-size:1.5rem">Sign in</h1>
+        <p class="text-secondary" style="margin-top:6px;font-size:0.875rem">Script hosting dashboard</p>
+      </div>
+
+      <form id="login-form">
+        <div class="mb-4">
+          <label class="label" style="display:block;margin-bottom:8px">Username</label>
+          <input class="input" name="username" autocomplete="username" required autofocus>
+        </div>
+        <div class="mb-6">
+          <label class="label" style="display:block;margin-bottom:8px">Password</label>
+          <input class="input" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <div id="login-error" style="color:#ff6b6b;font-size:0.8125rem;margin-bottom:12px;min-height:1em"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;padding:14px">Sign in</button>
+      </form>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
